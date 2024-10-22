@@ -28,6 +28,11 @@ def db_creation(dbname, cur=curs, con=conn):
     con.commit()
 
 
+def usedb(dbname, cur=curs, con=conn):
+    # database use krne ke liye
+    cur.execute(f"use {dbname}")
+
+
 def table_creation(struc, cur=curs, con=conn):
     # table banane ke liye
     cur.execute(f"create table if not exists {struc}")
